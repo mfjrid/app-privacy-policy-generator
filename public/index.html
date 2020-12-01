@@ -58,121 +58,133 @@
           <div class="hero-body">
             <div class="columns">
               <div class="column">
-                <div class="content"><a class="title" href="https://github.com/nisrulz/app-privacy-policy-generator#app-privacy-policy-generator" target="_blank" rel="noopener noreferrer">
-                    <h1>App <em>Privacy Policy</em> Generator</h1></a>
+                <div class="content"><a class="title" href="https://origamy.id" target="_blank" rel="noopener noreferrer">
+                    <img src="images/origamy-logo.png" width="200" /></a>
+					<br/>
                   <h4 class="subtitle">
-                    Generate a generic Privacy Policy and Terms &amp; Conditions
-                    for your apps
+                    Buat Privacy Policy dan Terms of Condition untuk aplikasi Anda
                   </h4>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="section" id="step-1" v-if="wizardStep==1">
+		
+<!-- Step 1 -->
+<section class="section" id="step-1" v-if="wizardStep==1">
           <div class="columns">
-            <div class="column is-6 is-information"><img class="center-block sidebar-img" src="images/step_1.svg"><img class="center-block nav-btn" src="images/next.png" @click="nextStep()"></div>
-            <div class="column box scrollable">
-              <div class="control is-expanded">
-                <p class="help form-label">App Name</p>
-                <input class="input" type="text" required v-model="appName" placeholder="Awesome App Name" v-bind:class="{ 'is-danger': (appName == 'Please provide an App Name!' || appName.length == 0) }">
-              </div>
-              <div class="control is-expanded">
-                <p class="help form-label">Contact Information</p>
-                <input class="input" type="email" required v-model="appContact" placeholder="Email Address" v-bind:class="{ 'is-danger': (appContact == 'Please provide contact info!' || appContact.length == 0) }">
-              </div>
-              <div class="control is-expanded">
-                <p class="help form-label">Personally Identifiable Information</p>
-                <!-- PII-->
-                <input class="input is-primary" type="text" v-model="pidInfoIn" placeholder="Personally Identifiable Information you collect (comma separated)">
-              </div>
-              <div class="control is-expanded">
-                <p class="help form-label">App Type</p>
-                <!-- Type of App-->
-                <div class="select is-primary">
-                  <select v-model="typeOfApp">
-                    <option value="" disabled="">Select app type</option>
-                    <option>Free</option>
-                    <option>Open Source</option>
-                    <option>Freemium</option>
-                    <option>Ad Supported</option>
-                    <option>Commercial</option>
-                  </select>
+            <div class="column is-6 is-information"><img class="center-block sidebar-img" src="images/step_1.svg"></div>
+            <div class="column">
+              <div class="column box scrollable">
+                <div class="control is-expanded">
+                  <p class="help form-label">App Name</p>
+                  <input class="input" type="text" required v-model="appName" placeholder="Awesome App Name" v-bind:class="{ 'is-danger': (appName == 'Please provide an App Name!' || appName.length == 0) }">
                 </div>
-              </div>
-              <div class="control is-expanded">
-                <p class="help form-label">Mobile OS</p>
-                <!-- Mobile OS-->
-                <div class="select is-primary">
-                  <select v-model="osType">
-                    <option value="" disabled="">Select mobile OS</option>
-                    <option>Android</option>
-                    <option>iOS</option>
-                    <option>KaiOS</option>
-                    <option>Android &amp; iOS</option>
-                    <option>Android, iOS &amp; KaiOS</option>
-                  </select>
+                <div class="control is-expanded">
+                  <p class="help form-label">Contact Information</p>
+                  <input class="input" type="email" required v-model="appContact" placeholder="Email Address" v-bind:class="{ 'is-danger': (appContact == 'Please provide contact info!' || appContact.length == 0) }">
                 </div>
-              </div>
-              <div class="control">
-                <p class="help form-label">Policy Effective Date</p>
-                <!-- Policy Effective Date-->
-                <input class="input is-primary" type="date" required="" v-model="effectiveFromDate">
-              </div>
-              <div class="control is-expanded">
-                <p class="help form-label">OwnerType</p>
-                <!-- Owner-->
-                <div class="select is-primary">
-                  <select v-model="typeOfDev">
-                    <option value="" disabled="">Select owner type</option>
-                    <option>Individual</option>
-                    <option>Company</option>
-                  </select>
+                <div class="control is-expanded">
+                  <p class="help form-label">Personally Identifiable Information</p>
+                  <!-- PII-->
+                  <input class="input is-primary" type="text" v-model="pidInfoIn" placeholder="Personally Identifiable Information you collect (comma separated)">
                 </div>
+                <div class="control is-expanded">
+                  <p class="help form-label">App Type</p>
+                  <!-- Type of App-->
+                  <div class="select is-primary">
+                    <select v-model="typeOfApp">
+                      <option value="" disabled="">Select app type</option>
+                      <option>Free</option>
+                      <option>Open Source</option>
+                      <option>Freemium</option>
+                      <option>Ad Supported</option>
+                      <option>Commercial</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="control is-expanded">
+                  <p class="help form-label">Mobile OS</p>
+                  <!-- Mobile OS-->
+                  <div class="select is-primary">
+                    <select v-model="osType">
+                      <option value="" disabled="">Select mobile OS</option>
+                      <option>Android</option>
+                      <option>iOS</option>
+                      <option>KaiOS</option>
+                      <option>Android &amp; iOS</option>
+                      <option>Android, iOS &amp; KaiOS</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="control">
+                  <p class="help form-label">Policy Effective Date</p>
+                  <!-- Policy Effective Date-->
+                  <input class="input is-primary" type="date" required="" v-model="effectiveFromDate">
+                </div>
+                <div class="control is-expanded">
+                  <p class="help form-label">OwnerType</p>
+                  <!-- Owner-->
+                  <div class="select is-primary">
+                    <select v-model="typeOfDev">
+                      <option value="" disabled="">Select owner type</option>
+                      <option>Individual</option>
+                      <option>Company</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="control is-expanded" v-if="typeOfDev=='Company'">
+                  <p class="help form-label">Company Name</p>
+                  <!-- Company Name-->
+                  <input class="input is-primary" type="text" v-model="companyName" placeholder="Company Name">
+                </div>
+                <div class="control is-expanded" v-if="typeOfDev=='Individual'">
+                  <p class="help form-label">Developer Name</p>
+                  <!-- Developer Name-->
+                  <input class="input is-primary" type="text" v-model="devName" placeholder="Developer Name">
+                </div>
+  
+                
               </div>
-              <div class="control is-expanded" v-if="typeOfDev=='Company'">
-                <p class="help form-label">Company Name</p>
-                <!-- Company Name-->
-                <input class="input is-primary" type="text" v-model="companyName" placeholder="Company Name">
-              </div>
-              <div class="control is-expanded" v-if="typeOfDev=='Individual'">
-                <p class="help form-label">Developer Name</p>
-                <!-- Developer Name-->
-                <input class="input is-primary" type="text" v-model="devName" placeholder="Developer Name">
-              </div>
+              <button class="tombol tombol-next" @click="nextStep()">Next</button>
             </div>
+
           </div>
         </section>
-		                    
+		         
+
+<!-- Step 2-->				 
         <section class="section" id="step-2" v-if="wizardStep==2">
           <div class="columns">
             <div class="column is-6 is-information"><img class="center-block sidebar-img" src="images/step_2.svg">
-              <div class="center-parent"><img class="child nav-btn" src="images/prev.png" @click="prevStep()"><img class="child nav-btn" src="images/next.png" @click="nextStep()"></div>
+			  <div class="center-parent"></div>
             </div>
-            <div class="column box scrollable"><b>Include links to Third Party Services</b><a v-for="item in thirdPartyServices" rel="noopener noreferrer"><br>
+			<div class="column">
+				<div class="column box scrollable"><b>Include links to Third Party Services</b><a v-for="item in thirdPartyServices" rel="noopener noreferrer"><br>
                 <input type="checkbox" :id="'list-switch-' + item.model" v-model="item[item.model]">
                 <label :for="'list-switch-' + item.model"><img class="thirdparty-logo" :src="item.logo" :alt="item.name"><span class="thirdparty-text">{{ item.name }}</span></label></a></div>
-          </div>
+			<button class="tombol tombol-prev" @click="prevStep()">Prev</button>
+			<button class="tombol tombol-next" @click="nextStep()">Next</button>
+			</div>
+		  
+		  </div>
+		  
         </section>
+		
+		
         <section class="section" id="step-3" v-if="wizardStep==3">
           <div class="columns">
-            <div class="column is-6 is-information"><img class="center-block sidebar-img" src="images/step_3.svg"><img class="center-block nav-btn" src="images/prev.png" @click="prevStep()"></div>
+            <div class="column is-6 is-information"><img class="center-block sidebar-img" src="images/step_3.svg"></div>
             <div class="column">
-              <div class="box">
-                <ol>If you appreciate my work &amp; want to support the project:
-                  <li>Consider <a href="https://github.com/sponsors/nisrulz" target="_blank" rel="noopener noreferrer">sponsoring me on Github &#x1F468;&#x1F3FB;&zwj;&#x1F4BB;</a></li>
-                  <li>Consider <a href="https://www.paypal.me/nisrulz/5usd" target="_blank" rel="noopener noreferrer">buying me a cup of &#x2615;</a></li>
-                  <li>Add a comment in the project&apos;s <a href="https://github.com/nisrulz/app-privacy-policy-generator/issues/65" target="_blank" rel="noopener noreferrer">GuestBook &#x1F917;</a></li>
-                </ol>
-              </div>
-              <div class="box final-box"><b>All Done!</b><br>
-                <p>Now sit back and choose the type of document you want to generate: </p><br><a class="button is-primary" @click="togglePrivacyModalVisibility" rel="noopener noreferrer">Privacy Policy</a><a class="button is-info" @click="toggleTermsModalVisibility" rel="noopener noreferrer">Terms &amp; Conditions</a><br><br>
-                <p class="has-text-grey-light">The accuracy of the generated privacy policy and terms &amp; conditions on this website is not legally binding. Use at your own risk.</p>
-                <p><a class="has-text-danger" @click="toggleDisclaimerModalVisibility" rel="noopener noreferrer">Read the full Disclaimer here</a></p>
+              <div class="box final-box"><b>Semua selesai!</b><br>
+                <p>Sekarang duduk dan pilih jenis dokumen yang ingin Anda buat: </p><br><a class="button is-primary" @click="togglePrivacyModalVisibility" rel="noopener noreferrer">Privacy Policy</a><a class="button is-info" @click="toggleTermsModalVisibility" rel="noopener noreferrer">Terms &amp; Conditions</a><br><br>
+                <p class="has-text-grey-light">
+Keakuratan kebijakan privasi dan persyaratan & kondisi di situs web ini tidak mengikat secara hukum. Gunakan dengan resiko Anda sendiri.</p>
+                <p><a class="has-text-danger" @click="toggleDisclaimerModalVisibility" rel="noopener noreferrer">Baca Disclaimer lengkap disini</a></p>
               </div>
               <div class="box" id="fc-container">
                 <div id="fc-container-text">
-                  <div class="fc-title">Free privacy policy hosting + website for {{ appName }}.</div>
+                  <div class="fc-title">Klik Deploy untuk membuat website Privacy Policy untuk {{ appName }}.</div>
                 </div>
                 <div id="fc-callouts">
                   <form id="fc-form" action="https://app.flycricket.com/import/privacy" method="post" target="_blank" onsubmit="return fc_submit(event)">
@@ -180,16 +192,25 @@
                     <input id="fc-body" type="hidden" name="fc-body">
                     <input id="fc-name" type="hidden" name="fc-name" v-model="appName">
                     <div style="margin-top: 1em;">
-                      <button class="button is-light is-small">Learn More</button>
                       <button class="button is-black is-small">Deploy</button>
                     </div>
                   </form>
-                  <div class="fc-powered-by">Powered by <a href="https://app.flycricket.com/r/nishant?utm_source=partner&amp;utm_medium=website&amp;utm_campaign=privacy_generator" target="_blank" rel="noopener noreferrer">Flycricket</a></div>
                 </div>
+
               </div>
+			  				<div class="box">
+                <ol>Credit :
+                  <li>Privacy Policy Generator by <a href="https://github.com/sponsors/nisrulz" target="_blank" rel="noopener noreferrer">Nisrulz</a></li>
+				   <li><a href="https://origamy.id" target="_blank" rel="noopener noreferrer">Origamy.id</a></li>
+
+                </ol>
+              </div>
+			  
             </div>
-          </div>
+			
+          </div>		  
         </section>
+		
 
 		
         <div class="modal" v-bind:class="{ 'is-active': showPrivacyModal }">
